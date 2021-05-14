@@ -3,10 +3,9 @@
 
 ![alt text](https://ibb.co/TtjWvxR)
 
-- Contém:
-    .Menu lateral;
-    .Tabs;
-    .Login;
-    .Lançamentos de contas;
-    .Planos de contas;
-    .Gráficos
+- Menu lateral;
+- Tabs;
+- Login;
+- Lançamentos de contas;
+- Planos de contas;
+- Gráficos
