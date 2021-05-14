@@ -8,4 +8,7 @@
 - Login;
 - Lançamentos de contas;
 - Planos de contas;
-- Gráficos
+- Gráficos utilizando Chart.js;
+- Token interceptors (requisição utilizando o token do login);
+- Guardas de rotas (evitando entrar em rotas sem realizar login);
+- Requisições para API;
