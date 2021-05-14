@@ -1,0 +1,44 @@
+.boas-vindas{
+    margin: 1em;
+    span{
+        color: #36ABE0;
+        margin-top: -2px;
+    }
+
+    p{
+        font-size: small;
+
+        span {
+            font-size: medium;
+            margin-left: 5px;
+        }
+        padding-top: 3px;
+    }
+}
+
+.segment-button-checked{
+    --color-checked: #36ABE0;
+    --indicator-color: #36ABE0;   
+  }
+
+ion-segment-button{
+    font-size: smaller;
+}
+
+.saldo{
+    display: flex;
+    .select-saldo{
+        width: auto; 
+        font-size: small; 
+        height: 0px;
+        text-align: left;
+        //border: 1px solid black;
+        text-align: left;
+        margin-top: -3px;
+        margin-left: -11px;
+    }
+}
+
+.subtitulo-opacidade{
+    opacity: 0.5;
+}

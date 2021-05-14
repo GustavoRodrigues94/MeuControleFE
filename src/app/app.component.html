@@ -1,0 +1,31 @@
+<ion-app class="container-principal">
+
+  <ion-split-pane contentId="main" class="menu">
+    <ion-menu side="start" menuId="first" contentId="main" autoHide="true">
+      <ion-content>
+        <ion-list>
+          <ion-item (click)="fecharMenu()" [routerLink]="['/tabs/indicadores']">
+            <ion-icon name="home-outline" color="secondary" size="large"></ion-icon>
+            <ion-label>
+              Início
+            </ion-label>
+          </ion-item>
+          <ion-item (click)="fecharMenu()" [routerLink]="['lancamentos']">
+            <ion-icon name="wallet-outline" color="secondary" size="large"></ion-icon>
+            <ion-label>
+              Meus lançamentos
+            </ion-label>
+          </ion-item>
+          <ion-item (click)="deslogar()">
+            <ion-icon name="log-out-outline" color="secondary" size="large"></ion-icon>
+            <ion-label>
+              Sair/Trocar usuário
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet id="main"></ion-router-outlet>
+  </ion-split-pane>
+
+</ion-app>

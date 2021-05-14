@@ -1,0 +1,82 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+@import "theme/variables.scss";
+
+
+ion-toolbar{
+    --background: var(--ion-color-tertiary-tint);
+    ion-label{
+        color: #C8EEFF;
+    }
+}
+
+ion-back-button{
+    color: white;
+}
+
+ion-title{
+    color: white;
+}
+
+h1, h2, h3{
+    color: #36ABE0;
+    padding-left: 1em;
+}
+
+h4, h5, h6{
+    color: #5260FF;
+}
+
+ion-item{
+    margin-top: 5px;
+}
+
+.sweet-alert {
+    background-color: transparent;
+}
+
+ion-list-header{
+    font-size: large;
+}
+
+.entrada{
+    color: #2dd36f;
+}
+
+.saida{
+    color: #eb445a;
+}
+
+.segment-button-checked{
+    --color-checked: #36ABE0;
+    --indicator-color: #36ABE0;   
+  }
+
+ion-segment-button{
+    font-size: smaller;
+}

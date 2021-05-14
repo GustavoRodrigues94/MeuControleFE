@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    flex-direction: column;
+    height: 70%;
+}
+
+.form{
+    padding: 15px;
+    margin: 0 auto;
+    margin-top: 1em;
+    width: 90%;
+    border-radius: 10px;
+    background-color:#CEDFFF;
+}

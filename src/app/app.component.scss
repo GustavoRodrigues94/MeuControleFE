@@ -1,0 +1,42 @@
+ion-menu {
+  --ion-background-color: var(--ion-color-tertiary-tint);
+
+  ion-list {
+    background: transparent;
+  }
+  ion-label {
+    margin-left: 0.5em;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px var(--ion-color-medium);
+  }
+
+  ion-item {
+    --border-color: var(--ion-color-secondary);
+  }
+
+  ion-item:hover {
+    cursor: pointer;
+    ion-label {
+      color: var(--ion-color-secondary);
+    }
+  }
+}
+
+ion-item:hover {
+  --border-color: var(--ion-color-light) !important;
+  ion-label {
+    text-shadow: 2px 2px 5px var(--ion-color-tertiary) !important;
+  }
+  ion-icon {
+    color: var(--ion-color-light) !important;
+  }
+}
+
+.borda-icone {
+  background-color: var(--ion-color-light);
+  border-radius: 30px;
+  width: 35px;
+  height: auto;
+  text-align: center;
+}

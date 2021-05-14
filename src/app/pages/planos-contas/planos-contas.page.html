@@ -1,0 +1,91 @@
+<app-header tituloPagina="Planos de contas"></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Plano de contas</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <form [formGroup]="planoContaForm" (ngSubmit)="atualizandoPlanoConta ? atualizarPlanoConta() : cadastrarPlanoConta()" novalidate>
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label>Operação</ion-label>
+        <ion-select placeholder="Selecione uma" interface="popover" formControlName="operacao" [disabled]="atualizandoPlanoConta">
+          <ion-select-option value="entrada">( + ) Entrada </ion-select-option>
+          <ion-select-option value="saida">( - ) Saída </ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-item lines="full">
+      <ion-label position="floating">Nome do plano</ion-label>
+      <ion-input formControlName="nome" type="text"></ion-input>
+    </ion-item>
+
+    <ion-row>
+      <ion-col>
+        <ion-button *ngIf="!atualizandoPlanoConta" type="submit" color="primary" expand="block" [disabled]="!planoContaForm.valid">Cadastrar</ion-button>
+        <ion-button *ngIf="atualizandoPlanoConta" type="submit" color="primary" expand="block" [disabled]="!planoContaForm.valid">Atualizar</ion-button>
+        <ion-button *ngIf="atualizandoPlanoConta" color="light" expand="block" (click)="limparCampos(planoContaForm)">Cancelar</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </form>
+
+  <ion-list class="lista-planos" lines="none">
+
+    <ion-list-header class="entrada">
+      Planos de entradas
+    </ion-list-header>
+
+    <ion-item class="item-lista-planos" *ngFor="let planoEntrada of planosContas | FiltroPlanosEntradaSaida: 'e'">
+
+      <ion-label>
+
+        <span>{{planoEntrada.nome}} </span>
+
+        <div class="acoes-botoes">
+          <ion-button fill="clear" (click)="setarFormPlanoConta(planoEntrada)">
+            <ion-icon name="create-outline" color="primary" style="font-size: x-large;"></ion-icon>
+          </ion-button>
+          <ion-button fill="clear" (click)="deletarPlanoConta(planoEntrada.codigo)">
+            <ion-icon name="close-outline" color="danger" style="font-size: x-large;"></ion-icon>
+          </ion-button>
+        </div>
+
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list class="lista-planos" lines="none">
+
+    <ion-list-header class="saida">
+      Planos de saídas
+    </ion-list-header>
+
+    <ion-item class="item-lista-planos" *ngFor="let planoSaida of planosContas | FiltroPlanosEntradaSaida: 's'">
+
+      <ion-label>
+
+        <span>{{planoSaida.nome}}</span>
+
+        <div class="acoes-botoes">
+          <ion-button fill="clear" (click)="setarFormPlanoConta(planoSaida)">
+            <ion-icon name="create-outline" color="primary" style="font-size: x-large;"></ion-icon>
+          </ion-button>
+          <ion-button fill="clear" (click)="deletarPlanoConta(planoSaida.codigo)">
+            <ion-icon name="close-outline" color="danger" style="font-size: x-large;"></ion-icon>
+          </ion-button>
+        </div>
+
+      </ion-label>
+
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

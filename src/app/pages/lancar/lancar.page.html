@@ -1,0 +1,88 @@
+<app-header tituloPagina="Lançar contas"></app-header>
+
+<ion-content [fullscreen]="true" #conteudo>
+
+  <form [formGroup]="lancarContaForm" (ngSubmit)="lancarConta()" novalidate class="form">
+
+    <ion-list lines="none">
+      <ion-radio-group value="operacao" formControlName="operacao">
+
+        <ion-list-header>
+          <ion-label>O que deseja lançar?</ion-label>
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>( + ) Entrada</ion-label>
+          <ion-radio slot="start" color="success" value="entrada" (click)="exibirPlanosDeContas('entrada')"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>( - ) Saída</ion-label>
+          <ion-radio slot="start" color="danger" value="saida" (click)="exibirPlanosDeContas('saida')"></ion-radio>
+        </ion-item>
+
+      </ion-radio-group>
+
+    </ion-list>
+
+    <div *ngIf="deveExibirPlanosDeContas">
+      <ion-list lines="none">
+
+        <ion-list-header>
+          <ion-label>Qual o plano de conta? </ion-label>
+        </ion-list-header>
+
+        <ion-item>
+          <ion-select interface="popover" placeholder="Selecione um plano de conta"
+            (ionChange)="exibirDiasParaLancamentoValorLancamento()" formControlName="codigoPlanoConta">
+            <ion-select-option *ngFor="let planoConta of planosContas" value="{{planoConta.codigo}}">{{planoConta.nome}}
+            </ion-select-option>
+          </ion-select>
+        </ion-item>
+
+      </ion-list>
+    </div>
+
+    <div *ngIf="deveExibirDiasParaLancamento">
+      <ion-list lines="none">
+
+        <ion-list-header>
+          <ion-label>Para qual dia?</ion-label>
+        </ion-list-header>
+
+        <ion-item lines="none">
+          <ion-datetime displayFormat="DD/MMM/YYYY" pickerFormat="DD MMM YYYY"
+            monthShortNames='jan, fev, mar, abr, mai, jun, jul, ago, set, out, nov, dez' doneText="Ok"
+            cancelText="Cancelar" placeholder="Selecione a data de lançamento" (ionChange)="exibirRecorrencia()"
+            formControlName="dataLancamento">
+          </ion-datetime>
+        </ion-item>
+
+      </ion-list>
+    </div>
+
+    <div *ngIf="deveExibirValorLancamento">
+      <ion-list lines="none">
+
+        <ion-list-header>
+          <ion-label>Qual o valor?</ion-label>
+        </ion-list-header>
+
+        <ion-item lines="none">
+          <ion-input type="text" name="valor" formControlName="valor" placeholder="Informe o valor que deseja lançar"
+            [brmasker]="{money: true}" #input></ion-input>
+        </ion-item>
+
+      </ion-list>
+    </div>
+
+    <ion-row>
+      <ion-col>
+        <ion-button *ngIf="deveExibirValorLancamento" type="submit" color="primary" expand="block"
+          [disabled]="!lancarContaForm.valid">Lançar conta</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </form>
+
+</ion-content>

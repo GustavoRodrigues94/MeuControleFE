@@ -1,0 +1,52 @@
+<app-header tituloPagina="Indicadores"></app-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Indicadores</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="boas-vindas">
+
+    <p class="saldo">Seu saldo
+      <ion-select (ionChange)="obterSaldo($event.detail.value)" value="1" class="select-saldo" interface="popover">
+        <ion-select-option value="1">este mês</ion-select-option>
+        <ion-select-option value="2">mês passado</ion-select-option>
+      </ion-select> é <span> {{saldo | currency:"BRL":true:"1.2"}}</span>
+    </p>
+
+    <p class="saldo">Você ainda pode gastar 
+      <ion-select (ionChange)="obterSaldoPodeGastar($event.detail.value)" value="3" class="select-saldo" interface="popover">
+        <ion-select-option value="1">dia</ion-select-option>
+        <ion-select-option value="2">semana</ion-select-option>
+        <ion-select-option value="3">mês</ion-select-option>
+      </ion-select>
+      <span> {{saldoPodeGastar | currency:"BRL":true:"1.2"}}</span>
+    </p>
+  </div>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Gastos por planos</ion-card-title>
+      <ion-card-subtitle>Top 5 gastos por planos de saídas</ion-card-subtitle>
+
+      <ion-segment (ionChange)="obterGraficoSaidasPorPlanoConta($event.detail.value)" value="1">
+        <ion-segment-button value="1" selected>
+          <ion-label>Este mês</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="2">
+          <ion-label>Mês passado</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+    </ion-card-header>
+
+    <ion-card-content>
+      <canvas #graficoSaidasPorPlanoConta style="position: relative; height:20vh; width:40vw"></canvas>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

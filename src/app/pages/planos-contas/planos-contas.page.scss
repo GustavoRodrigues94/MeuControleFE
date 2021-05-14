@@ -1,0 +1,33 @@
+.span-validacao{
+    color: red;
+    font-size: x-small;
+    padding-left: 16px;
+}
+
+.lista-planos{
+    display: flex;
+    margin-top: 1em;
+    flex-direction: column;
+}
+
+.item-lista-planos{
+    font-size: medium;
+    justify-content: center;
+    ion-label{
+        margin-top: 0px;
+        margin-bottom: 1px;
+        margin-left: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        span{
+            width: 80%;
+            margin-top: 11px;
+        }
+
+        .acoes-botoes{
+            text-align: right;
+        }
+    }
+}

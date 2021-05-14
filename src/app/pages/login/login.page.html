@@ -1,0 +1,38 @@
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <img src="../../../assets/img/logo_720px155px.png" class="logo" />
+
+    <form class="form" novalidate [formGroup]="loginForm">
+      <ion-item lines="full">
+        <ion-icon name="person-outline" color="tertiary" slot="start" class="icone-input"></ion-icon>
+        <ion-label position="floating" color="tertiary">Email</ion-label>
+        <ion-input type="email" formControlName="email" placeholder="Insira seu e-mail"></ion-input>
+      </ion-item>
+
+
+      <ion-item lines="full">
+        <ion-icon name="key-outline" color="tertiary" slot="start" class="icone-input"></ion-icon>
+        <ion-label position="floating" color="tertiary">Senha</ion-label>
+        <ion-input [type]="esconderSenha ? 'password' : 'text'" formControlName="senha" placeholder="Insira sua senha">
+        </ion-input>
+        <ion-icon [name]="esconderSenha ? 'eye-outline' : 'eye-off-outline'" slot="end"
+          (click)="esconderSenha = !esconderSenha" style="margin-top: 15px;"></ion-icon>
+      </ion-item>
+
+      <ion-row>
+        <ion-col>
+          <ion-fab-button color="tertiary" type="submit" style="margin: 0 auto; margin-top: 1em;" [disabled]="!loginForm.valid"
+            (click)="logar()"> 
+            <ion-icon name="log-in-outline" style="zoom:1.5;"></ion-icon>
+          </ion-fab-button>
+        </ion-col>
+      </ion-row>
+    </form>
+
+    <ion-row style="margin: 0 auto; margin-top: 3em;">
+      <ion-col>
+        <ion-button round outline color="secondary" [routerLink]="['/cadastro']">Cadastrar-se agora</ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

@@ -1,0 +1,17 @@
+ion-tab-bar,
+ion-tab-button {
+  background-color: var(--ion-color-tertiary-tint);
+}
+
+ion-icon {
+  color: white;
+}
+
+ion-label {
+  color: white;
+}
+
+ion-tab-button[aria-selected=true] {
+    color:white;
+    background-color: #3689ef;
+ }

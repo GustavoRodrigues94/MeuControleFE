@@ -1,0 +1,51 @@
+<app-header tituloPagina="Meus lançamentos"></app-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card class="welcome-card">
+    <ion-card-header>
+      <ion-card-title>Lançamentos por período</ion-card-title>
+      <ion-card-subtitle>Seus lançamentos no período selecionado</ion-card-subtitle>
+
+      <ion-segment (ionChange)="obterLancamentosPorIntervalo($event.detail.value)" value="1">
+        <ion-segment-button value="1" selected>
+          <ion-label>2 dias</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="2">
+          <ion-label>5 dias</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="3">
+          <ion-label>30 dias</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-row style="border-bottom: groove; font-weight: bold;">
+        <ion-col col-3>
+          <ion-label>Lançamento</ion-label>
+        </ion-col>
+        <ion-col col-5>
+          <ion-label>Plano</ion-label>
+        </ion-col>
+        <ion-col col-4 style="text-align: right;">
+          <ion-label>R$</ion-label>
+        </ion-col>
+      </ion-row>
+      <ion-row style="border-bottom: groove;" *ngFor="let lancamento of lancamentos">
+        <ion-col col-3>
+          <ion-label>{{lancamento.dataLancamento | date: 'dd/MM/yy'}} </ion-label>
+        </ion-col>
+        <ion-col col-5 style="text-align: left;">
+          <ion-label>{{lancamento.planoConta.nome}}</ion-label>
+        </ion-col>
+        <ion-col col-4 style="text-align: right;">
+          <ion-label [color]="lancamento.planoConta.operacao == 'e' ? 'success' : 'danger'">
+            {{lancamento.valor | currency:'BRL'}}</ion-label>
+        </ion-col>
+      </ion-row>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
