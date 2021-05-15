@@ -1,10 +1,11 @@
 # MeuControle - O dinheiro em suas mãos!
 > Frontend utilizando Ionic para controle financeiro.
-> 
-![alt text](https://i.ibb.co/WvJnpvQ/Whats-App-Image-2021-05-15-at-12-15-19.jpg)
-![alt text](https://i.ibb.co/qNrxRbL/Whats-App-Image-2021-05-15-at-12-20-41.jpg)
-![alt text](https://i.ibb.co/rmZLzsK/Whats-App-Image-2021-05-15-at-12-17-08.jpg)
 
+<p float="left">
+  <img src="https://i.ibb.co/WvJnpvQ/Whats-App-Image-2021-05-15-at-12-15-19.jpg" width="200" />
+  <img src="https://i.ibb.co/qNrxRbL/Whats-App-Image-2021-05-15-at-12-20-41.jpg" width="200" /> 
+  <img src="https://i.ibb.co/rmZLzsK/Whats-App-Image-2021-05-15-at-12-17-08.jpg" width="100" />
+</p>
 
 - Menu lateral;
 - Tabs;
