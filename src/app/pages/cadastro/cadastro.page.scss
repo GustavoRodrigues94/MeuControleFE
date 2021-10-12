@@ -3,7 +3,6 @@
     margin: 0 auto;
     justify-content: center;
     flex-direction: column;
-    height: 70%;
 }
 
 .form{
@@ -13,4 +12,8 @@
     width: 90%;
     border-radius: 10px;
     background-color:#CEDFFF;
+}
+
+input:before {
+    content: "$" !important;
 }

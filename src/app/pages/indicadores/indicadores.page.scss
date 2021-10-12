@@ -42,3 +42,21 @@ ion-segment-button{
 .subtitulo-opacidade{
     opacity: 0.5;
 }
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;  
+
+    ion-icon{
+        color: #eb445a !important;
+        font-size: 45px !important;
+        margin-bottom: 0.5em;
+    }
+
+    span{
+        color: #383a3e98;
+    }
+}

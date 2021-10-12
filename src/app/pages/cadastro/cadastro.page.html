@@ -13,30 +13,38 @@
     <p style="font-size: small; padding-left: 2em; margin-top: -5px">Você só precisa dar o primeiro passo</p>
     <form class="form" novalidate [formGroup]="cadastroForm">
 
-      <ion-item lines="full">
-        <ion-label position="floating">Nome</ion-label>
+      <ion-item lines="none">
+        <ion-label position="floating">Qual seu nome?</ion-label>
         <ion-input type="text" formControlName="nome"></ion-input>
       </ion-item>
 
-      <ion-item lines="full">
-        <ion-label position="floating">Email</ion-label>
+      <ion-item lines="none">
+        <ion-label position="floating">Qual sua renda mensal?</ion-label>
+        <ion-input type="text" name="rendaMensal" formControlName="rendaMensal" placeholder="R$"
+          [brmasker]="{money: true}" #input>
+        </ion-input>
+      </ion-item>
+      
+      <ion-item lines="none">
+        <ion-label position="floating">Qual seu email?</ion-label>
         <ion-input type="email" formControlName="email"></ion-input>
       </ion-item>
 
-      <ion-item lines="full">
-        <ion-label position="floating">Senha</ion-label>
+      <ion-item lines="none">
+        <ion-label position="floating">Qual será sua senha?</ion-label>
         <ion-input type="password" formControlName="senha"></ion-input>
       </ion-item>
 
-      <ion-item lines="full">
+      <ion-item lines="none">
         <ion-label position="floating">Repetir senha</ion-label>
         <ion-input type="password" formControlName="repetirSenha"></ion-input>
       </ion-item>
 
       <ion-row>
-          <ion-button full color="primary" type="submit" style="margin: 0 auto; margin-top: 2em;" [disabled]="!cadastroForm.valid" (click)="cadastrar()">
-            Confirmar cadastro
-          </ion-button>
+        <ion-button full color="primary" type="submit" style="margin: 0 auto; margin-top: 2em;"
+          [disabled]="!cadastroForm.valid" (click)="cadastrar()">
+          Confirmar cadastro
+        </ion-button>
       </ion-row>
     </form>
 

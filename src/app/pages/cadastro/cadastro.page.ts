@@ -27,12 +27,16 @@ export class CadastroPage implements OnInit {
       email: ['', [Validators.required, Validators.pattern('[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$')]],
       senha: ['', [Validators.required, Validators.minLength(5)]],
       repetirSenha: ['', [Validators.required, Validators.minLength(5)]],
+      rendaMensal: ['', [Validators.required]]
     }, {validator: VerificarConfirmacaoSenha.CombinarSenha})
   }
 
   cadastrar(){
     this.splashScreen.carregar();
-    this.usuarioService.cadastrar(this.cadastroForm.value as IUsuario)
+    let usuario = this.cadastroForm.getRawValue() as IUsuario;
+    usuario.rendaMensal = Number(usuario.rendaMensal.toString().replace(",", "."));
+
+    this.usuarioService.cadastrar(usuario)
       .subscribe(() => {
         this.splashScreen.fechar();
         this.splashScreen.avisarSucessoComConfirmacao("Parabéns!", "Seu cadastro foi realizado.");

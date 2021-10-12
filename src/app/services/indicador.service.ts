@@ -18,8 +18,4 @@ export class IndicadorService {
   obterGraficoSaidasPorPlanoConta(usuario: string, filtroMes: number) : Observable<any> {
     return this.httpClient.get<any>(apiUrlLancamentoConta + '/Top5Gastos/' + usuario + '/' + filtroMes);
   }
-
-  obterSaldoPodeGastar(usuario: string, filtroDiaSemanaMes: number) {
-    return this.httpClient.get<any>(apiUrlLancamentoConta + '/SaldoPodeGastar/' + usuario + '/' + filtroDiaSemanaMes);
-  }
 }

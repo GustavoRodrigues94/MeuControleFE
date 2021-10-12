@@ -16,15 +16,6 @@
         <ion-select-option value="2">mês passado</ion-select-option>
       </ion-select> é <span> {{saldo | currency:"BRL":true:"1.2"}}</span>
     </p>
-
-    <p class="saldo">Você ainda pode gastar 
-      <ion-select (ionChange)="obterSaldoPodeGastar($event.detail.value)" value="3" class="select-saldo" interface="popover">
-        <ion-select-option value="1">dia</ion-select-option>
-        <ion-select-option value="2">semana</ion-select-option>
-        <ion-select-option value="3">mês</ion-select-option>
-      </ion-select>
-      <span> {{saldoPodeGastar | currency:"BRL":true:"1.2"}}</span>
-    </p>
   </div>
 
   <ion-card>
